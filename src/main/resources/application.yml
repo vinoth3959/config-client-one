@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: config-client-one
+#  profiles:
+#    active: ${CUSTOMER_PROFILE:default-profile}
+  config:
+    import: optional:configserver:http://localhost:8888
+  cloud:
+    config:
+      profile: ${CUSTOMER_PROFILE:dev}
+      label: ${CUSTOMER_BRANCH:main}
+      
